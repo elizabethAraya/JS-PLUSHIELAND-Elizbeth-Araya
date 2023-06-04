@@ -60,3 +60,21 @@ while(continuar){
         alert("El producto ha sido encontrado")
     }
 }
+//Agregar productos al html con queryselector
+
+const peluchesProductos = document.querySelector("#peluchesProductos")
+productos.forEach((producto)=>{
+    const tarjetaProducto = document.createElement("div")
+    tarjetaProducto.className = "tarjetaProducto"
+    tarjetaProducto.id = `producto${producto.id}`
+    tarjetaProducto.innerHTML = `<img src="${producto.imagen}">
+                                <h3>${producto.nombre}</h3>
+                                <span>Precio: ${producto.precio} $</span>
+                                <span>Stock: ${producto.stock} $</span>
+                                <button>Comprar</button>
+                                `
+    peluchesProductos.append(tarjetaProducto)
+})
+
+const productoEliminar = document.querySelector("#producto1")
+productoEliminar.remove()
