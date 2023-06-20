@@ -60,7 +60,7 @@ while(continuar){
         alert("El producto ha sido encontrado")
     }
 }
-//Agregar productos al html con queryselector
+
 
 const peluchesProductos = document.querySelector("#peluchesProductos")
 productos.forEach((producto)=>{
@@ -78,3 +78,16 @@ productos.forEach((producto)=>{
 
 const productoEliminar = document.querySelector("#producto1")
 productoEliminar.remove()
+
+
+class Producto {
+    constructor(obj){
+        this.nombre = obj.producto.toUpperCase()
+        this.descripcion = obj.descripcion.toUpperCase()
+        this.precio = parseFloat(obj.precio)
+        this.stock = parseFloat(obj.stock)
+
+    }
+}
+const almacenados = JSON.parse(localStorage.getItem("listaProductos"))
+const producto = []
